@@ -17,7 +17,7 @@ namespace NUnitTestProject1
         [Test]
         public void CompareFeetOrInch()
         {
-            CompareLength compare = new CompareLength();
+            conversion compare = new conversion();
             //compare feet and inch
             //if same then return 1 else return 0
             bool sameOrNot = compare.compareInchToFeet(1, 12);
@@ -63,9 +63,12 @@ namespace NUnitTestProject1
            
             Assert.IsTrue(data.equals(data));
         }
-        /// <summary>
-        /// send null as argument
-        /// </summary>
-       
+     [Test]
+     public void compare1ft1inch()
+        {
+            CompareLength comp = new CompareLength();
+            
+            Assert.IsFalse(comp.compare(1, "feet", 1, "inch"));
+        }
     }
 }
