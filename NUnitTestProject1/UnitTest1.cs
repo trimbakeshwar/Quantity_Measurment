@@ -21,19 +21,18 @@ namespace NUnitTestProject1
             int sameOrNot = compare.compareFeetInch(1, 12);
             Assert.AreEqual(1, sameOrNot);
         }
+        /// <summary>
+        /// send null as argument
+        /// </summary>
         [Test]
         public void checkForNull()
         {
             CheckEquals feet = new CheckEquals();
             Assert.IsFalse(feet.equals(null));
         }
-        [Test]
-        public void checkForWrongType()
-        {
-            CheckEquals feet = new CheckEquals();
-            object o = new object();
-            Assert.IsFalse(feet.equals(o));
-        }
+        /// <summary>
+        /// check for wrong refrance
+        /// </summary>
         [Test]
         public void checkForWrongRefrance()
         {
@@ -41,6 +40,20 @@ namespace NUnitTestProject1
             CheckEquals feet2 = new CheckEquals();
             Assert.IsFalse(feet.equals(feet2));
         }
+        /// <summary>
+        /// check for wrong type
+        /// if send wrong datatype of objct
+        /// </summary>
+        [Test]
+        public void checkForWrongType()
+        {
+            CheckEquals feet = new CheckEquals();
+            object o = new object();
+            Assert.IsFalse(feet.equals(o));
+        }
+      /// <summary>
+      /// check for same value
+      /// </summary>
         [Test]
         public void checkEqualse()
         {
