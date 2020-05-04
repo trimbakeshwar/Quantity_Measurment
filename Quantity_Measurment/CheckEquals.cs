@@ -7,17 +7,19 @@ namespace Quantity_Measurment
     public class CheckEquals
     {
         //seter and geter of feet
-        public double Feet{set; get;}
-       
+        public double Length{set; get;}
+        public string Unit { set; get; }
 
+        CompareLength compare = new CompareLength();
         /// <summary>
         /// constructor to initialize
         /// </summary>
         /// <param name="feet">value in feet</param>
         ///  /// <param name="inch">value in inch</param>
-        public CheckEquals(double feet,double inch)
+        public  CheckEquals(string unit,double length)
         {
-            this.Feet = feet;
+            this.Length = length;
+            this.Unit = unit;
           
         }
 
@@ -30,7 +32,7 @@ namespace Quantity_Measurment
         /// </summary>
         /// <param name="obj">value for check</param>
         /// <returns></returns>
-        public  Boolean equals(object obj)
+        public  bool equals(object obj)
         {
             //if object is null,refrence is different,type is diff,value is not same then return false 
             if ((obj == null) || (obj != this) || (obj.GetType() != this.GetType()))
@@ -40,7 +42,7 @@ namespace Quantity_Measurment
             //downcasting in object to checkEqualse method
             CheckEquals c = (CheckEquals)obj;
            //if value same then return true
-            return Feet == c.Feet;
+            return (Length == c.Length)&&(Unit==c.Unit);
         }
     }
 }
