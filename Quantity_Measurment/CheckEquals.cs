@@ -4,19 +4,40 @@ using System.Text;
 
 namespace Quantity_Measurment
 {
-    class CheckEquals
+    public class CheckEquals
     {
+        //seter and geter of feet
         public double Feet{set; get;}
+
+        /// <summary>
+        /// constructor to initialize
+        /// </summary>
+        /// <param name="feet">value in feet</param>
         public CheckEquals(double feet)
         {
             this.Feet = feet;
         }
-        public Boolean equals(object feet)
+
+        public CheckEquals()
         {
-            if(feet==null)
+        }
+
+        /// <summary>
+        /// create equles method to check equality
+        /// </summary>
+        /// <param name="obj">value for check</param>
+        /// <returns></returns>
+        public  Boolean equals(object obj)
+        {
+            //if object is null,refrence is different,type is diff,value is not same then return false 
+            if ((obj == null) || (obj != this) || (obj.GetType() != this.GetType()))
             {
                 return false;
             }
+            //downcasting in object to checkEqualse method
+            CheckEquals c = (CheckEquals)obj;
+           //if value same then return true
+            return Feet == c.Feet;
         }
     }
 }
