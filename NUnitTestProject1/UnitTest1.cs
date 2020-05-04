@@ -1,10 +1,12 @@
 using NUnit.Framework;
 using Quantity_Measurment;
+using Quantity_Measurment.Quantity_Measurment;
 
 namespace NUnitTestProject1
 {
     public class Tests
     {
+        CheckEqualsForInch feet = new CheckEqualsForInch();
         [SetUp]
         public void Setup()
         {
@@ -25,7 +27,7 @@ namespace NUnitTestProject1
         /// send null as argument
         /// </summary>
         [Test]
-        public void checkForNull()
+        public void checkForNullForFeet()
         {
             CheckEquals feet = new CheckEquals();
             Assert.IsFalse(feet.equals(null));
@@ -34,7 +36,7 @@ namespace NUnitTestProject1
         /// check for wrong refrance
         /// </summary>
         [Test]
-        public void checkForWrongRefrance()
+        public void checkForWrongRefranceForFeet()
         {
             CheckEquals feet = new CheckEquals();
             CheckEquals feet2 = new CheckEquals();
@@ -60,6 +62,24 @@ namespace NUnitTestProject1
             CheckEquals feet = new CheckEquals();
             feet.Feet = 5;
             Assert.IsTrue(feet.equals(feet));
+        }
+        /// <summary>
+        /// send null as argument
+        /// </summary>
+        [Test]
+        public void checkForNullForInch()
+        {
+           
+            Assert.IsFalse(feet.equals(null));
+        }
+        /// <summary>
+        /// check for wrong refrance
+        /// </summary>
+        [Test]
+        public void checkForWrongRefranceForInch()
+        {
+            CheckEqualsForInch feet2 = new CheckEqualsForInch();
+            Assert.IsFalse(feet.equals(feet2));
         }
     }
 }
