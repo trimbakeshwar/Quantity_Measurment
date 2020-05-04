@@ -5,7 +5,7 @@ using System.Text;
 namespace Quantity_Measurment
 {
     //comparison
-    class CompareLength
+    public class CompareLength
     {
         public int compareFeetInch(double feet, double inch)
         {
