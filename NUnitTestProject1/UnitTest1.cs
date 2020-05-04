@@ -7,7 +7,8 @@ namespace NUnitTestProject1
     public class Tests
     {
         CheckEquals data = new CheckEquals();
-         [SetUp]
+        CompareLength comp = new CompareLength();
+        [SetUp]
         public void Setup()
         {
         }
@@ -63,12 +64,29 @@ namespace NUnitTestProject1
            
             Assert.IsTrue(data.equals(data));
         }
-     [Test]
-     public void compare1ft1inch()
-        {
-            CompareLength comp = new CompareLength();
-            
+        /// <summary>
+        /// compareOneFeet with 1 inch
+        /// </summary>
+        [Test]
+        public void compare_1ft_with_1inch()
+        {           
             Assert.IsFalse(comp.compare(1, "feet", 1, "inch"));
+        }
+        /// <summary>
+        /// compare 1 inch with 1 feet
+        /// </summary>
+        [Test]
+        public void compare_1inch_With_1ft()
+        {
+            Assert.IsFalse(comp.compare(1, "inch", 1, "feet"));
+        }
+        /// <summary>
+        /// compare 1 inch with 1 feet
+        /// </summary>
+        [Test]
+        public void compare_1ft_With_12inch()
+        {
+            Assert.IsFalse(comp.compare( 1, "feet",12,"inch"));
         }
     }
 }
