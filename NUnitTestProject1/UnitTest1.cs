@@ -47,7 +47,7 @@ namespace NUnitTestProject1
         /// if send wrong datatype of objct
         /// </summary>
         [Test]
-        public void checkForWrongType()
+        public void checkForWrongTypeForFeet()
         {
             CheckEquals feet = new CheckEquals();
             object o = new object();
@@ -80,6 +80,27 @@ namespace NUnitTestProject1
         {
             CheckEqualsForInch feet2 = new CheckEqualsForInch();
             Assert.IsFalse(feet.equals(feet2));
+        }
+        /// <summary>
+        /// check for wrong type
+        /// if send wrong datatype of objct
+        /// </summary>
+        [Test]
+        public void checkForWrongTypeForInch()
+        {
+           
+            object o = new object();
+            Assert.IsFalse(feet.equals(o));
+        }
+        /// <summary>
+        /// check for same value
+        /// </summary>
+        [Test]
+        public void checkEqualseForInch()
+        {
+            CheckEqualsForInch feet = new CheckEqualsForInch();
+            feet.Feet = 5;
+            Assert.IsTrue(feet.equals(feet));
         }
     }
 }
