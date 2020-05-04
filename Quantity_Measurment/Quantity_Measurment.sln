@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantity_Measurment", "Quantity_Measurment.csproj", "{E65C1C40-FC26-48EF-82C5-64173DAD84D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "..\NUnitTestProject1\NUnitTestProject1.csproj", "{84EA27E2-1D41-46CD-89E5-E575E19D72C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E65C1C40-FC26-48EF-82C5-64173DAD84D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65C1C40-FC26-48EF-82C5-64173DAD84D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65C1C40-FC26-48EF-82C5-64173DAD84D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65C1C40-FC26-48EF-82C5-64173DAD84D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84EA27E2-1D41-46CD-89E5-E575E19D72C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EA27E2-1D41-46CD-89E5-E575E19D72C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84EA27E2-1D41-46CD-89E5-E575E19D72C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84EA27E2-1D41-46CD-89E5-E575E19D72C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6762018C-2E9E-4ECC-8B2E-69B5ABE74D3B}
+	EndGlobalSection
+EndGlobal
