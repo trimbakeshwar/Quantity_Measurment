@@ -8,14 +8,17 @@ namespace Quantity_Measurment
     {
         //seter and geter of feet
         public double Feet{set; get;}
+       
 
         /// <summary>
         /// constructor to initialize
         /// </summary>
         /// <param name="feet">value in feet</param>
-        public CheckEquals(double feet)
+        ///  /// <param name="inch">value in inch</param>
+        public CheckEquals(double feet,double inch)
         {
             this.Feet = feet;
+          
         }
 
         public CheckEquals()
