@@ -81,12 +81,20 @@ namespace NUnitTestProject1
             Assert.IsFalse(comp.compare(1, "inch", 1, "feet"));
         }
         /// <summary>
-        /// compare 1 inch with 1 feet
+        /// compare 12 inch with 1 feet
         /// </summary>
         [Test]
         public void compare_1ft_With_12inch()
         {
             Assert.IsFalse(comp.compare( 1, "feet",12,"inch"));
+        }
+        /// <summary>
+        /// compare 12 inch with 1 feet
+        /// </summary>
+        [Test]
+        public void compare_12inch_With_1ft()
+        {
+            Assert.IsFalse(comp.compare(12, "inch",1,"feet"));
         }
     }
 }
