@@ -88,7 +88,7 @@ namespace NUnitTestProject1
             Assert.IsFalse(comp.compare(data, data2));
         }
         /// <summary>
-        /// compare 12 inch with 1 feet
+        /// compare  1 feet with 12 inch 
         /// </summary>
         [Test]
         public void compare_1ft_With_12inch()
@@ -108,7 +108,7 @@ namespace NUnitTestProject1
             Assert.IsTrue(comp.compare(data, data2));
         }
         /// <summary>
-        /// compare 12 inch with 1 feet
+        /// compare  3 feet with 1 yard
         /// </summary>
         [Test]
         public void compare_3feet_With_1yard()
@@ -117,5 +117,26 @@ namespace NUnitTestProject1
             CheckEquals data2 = new CheckEquals("yard", 1);
             Assert.IsTrue(comp.compare(data, data2));
         }
+        /// <summary>
+        /// compare  3 feet with 1 yard
+        /// </summary>
+        [Test]
+        public void compare_1feet_With_1yard()
+        {
+            CheckEquals data = new CheckEquals("feet", 1);
+            CheckEquals data2 = new CheckEquals("yard", 1);
+            Assert.IsFalse(comp.compare(data, data2));
+        }
+              /// <summary>
+              /// compare  3 feet with 1 yard
+              /// </summary>
+        [Test]
+        public void compare_1inch_With_1yard()
+        {
+            CheckEquals data = new CheckEquals("inch", 1);
+            CheckEquals data2 = new CheckEquals("yard", 1);
+            Assert.IsTrue(comp.compare(data, data2));
+        }
     }
+    
 }
