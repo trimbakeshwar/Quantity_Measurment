@@ -7,16 +7,28 @@ namespace Quantity_Measurment
     public class CompareLength
     {
         conversion CoversionObject = new conversion();
+        
 
-        public bool compare(double objOne, string unitOne, dynamic objTwo, string unitTwo)
-        {
-            dynamic valueOne = CoversionObject.conversionLength(unitOne, objOne);
-            dynamic valueTwo = CoversionObject.conversionLength(unitTwo, objTwo);
-            if (valueOne == valueTwo)
+        public bool compare(CheckEquals objOne, CheckEquals objTwo)
+        { 
+            if(objOne.Length==0 && objTwo.Length==0)
             {
                 return true;
             }
-            return false;
+            else if((objOne.Unit.Contains("inch")&& objTwo.Unit.Contains("feet"))|| (objOne.Unit.Contains("feet") && objTwo.Unit.Contains("inch")))
+            {
+                return CoversionObject.compareInchAndFeet(objOne, objTwo);
+            }
+            else if ((objOne.Unit.Contains("inch") && objTwo.Unit.Contains("yard")) || (objOne.Unit.Contains("yard") && objTwo.Unit.Contains("inch")))
+            {
+                return CoversionObject.compareInchAndYard(objOne, objTwo);
+            }
+            else if ((objOne.Unit.Contains("feet") && objTwo.Unit.Contains("yard")) || (objOne.Unit.Contains("yard") && objTwo.Unit.Contains("feet")))
+            {
+                return CoversionObject.comparefeetAndYard(objOne, objTwo);
+            }
+           
+            return false;                        
         }
     }
 }
