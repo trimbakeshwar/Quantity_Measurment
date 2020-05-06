@@ -158,6 +158,26 @@ namespace NUnitTestProject1
             CheckEquals data2 = new CheckEquals("feet",3);
             Assert.IsTrue(comp.compare(data, data2));
         }
+        /// <summary>
+        /// compare  2 inch  with 5cm
+        /// </summary>
+        [Test]
+        public void compare_2inch_with_5cm()
+        {
+            CheckEquals data = new CheckEquals("inch", 2);
+            CheckEquals data2 = new CheckEquals("cm", 5);
+            Assert.IsTrue(comp.compare(data, data2));
+        }
+        /// <summary>
+        /// compare   5cm with 2inch
+        /// </summary>
+        [Test]
+        public void compare_5cm_with_2inch()
+        {
+            CheckEquals data = new CheckEquals ("cm", 5);
+            CheckEquals data2 = new CheckEquals("inch", 2);
+            Assert.IsTrue(comp.compare(data, data2));
+        }
     }
     
 }

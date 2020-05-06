@@ -60,6 +60,23 @@ namespace Quantity_Measurment
             //convert into feet for comparison
 
         }
+        public bool compareinchAndCM(CheckEquals e1, CheckEquals e2)
+        {
+            double data;
+            if (e1.Unit.Contains("inch"))
+            {
+                data = e1.Length * 2.5;
+                return check(e2.Length, data);
+            }
+            else if (e1.Unit.Contains("cm"))
+            {
+                data = e1.Length / 2.5;
+                return check(e2.Length, data);
+            }
+            return false;
+            //convert into feet for comparison
+
+        }
         public bool check(double data2, double data)
         {
             if (data2 == data)

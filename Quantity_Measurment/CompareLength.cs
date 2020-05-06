@@ -27,7 +27,13 @@ namespace Quantity_Measurment
             {
                 return CoversionObject.comparefeetAndYard(objOne, objTwo);
             }
-           
+            else if ((objOne.Unit.Contains("inch") && objTwo.Unit.Contains("cm")) || (objOne.Unit.Contains("cm") && objTwo.Unit.Contains("inch")))
+            {
+                return CoversionObject.compareinchAndCM(objOne, objTwo);
+            }
+
+
+
             return false;                        
         }
     }
