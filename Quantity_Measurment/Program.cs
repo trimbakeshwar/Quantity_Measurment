@@ -35,7 +35,7 @@ namespace Quantity_Measurment
 
             CheckEquals e1 = new CheckEquals("feet", 1);
             CheckEquals e2 = new CheckEquals("inch", 12);
-            conversion p = new conversion();
+           conversionLengths p = new conversionLengths();
             bool output = p.compareInchAndFeet(e1, e2);
             Console.WriteLine(""+output);
             CheckEquals e3 = new CheckEquals("inch", 12);

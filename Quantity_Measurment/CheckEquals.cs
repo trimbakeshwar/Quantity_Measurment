@@ -8,18 +8,20 @@ namespace Quantity_Measurment
     {
         //seter and geter of feet
         public double Length{set; get;}
-         public string Unit { set; get; }
-       
-        CompareLength compare = new CompareLength();
+        // public string Unit { set; get; }
+        public string Unit { set; get; }
+        CompareValuesOnTheBasisOfLength compare = new CompareValuesOnTheBasisOfLength();
         /// <summary>
         /// constructor to initialize
         /// </summary>
         /// <param name="feet">value in feet</param>
         ///  /// <param name="inch">value in inch</param>
-        public  CheckEquals(string unit,double length)
+        public  CheckEquals(string Unit,double length)
         {
+            //value is assign in length
             this.Length = length;
-            this.Unit = unit;
+            //unit is assign unit
+            this.Unit = Unit;
           
         }
 
@@ -32,7 +34,7 @@ namespace Quantity_Measurment
         /// </summary>
         /// <param name="obj">value for check</param>
         /// <returns></returns>
-        public  bool equals(object obj)
+        public override bool Equals(object obj)
         {
             //if object is null,refrence is different,type is diff,value is not same then return false 
             if ((obj == null) || (obj != this) || (obj.GetType() != this.GetType()))
