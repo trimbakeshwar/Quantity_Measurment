@@ -139,6 +139,23 @@ namespace Quantity_Measurment
             //convert into feet for comparison
 
         }
+        public double convertToLiter(CheckEquals e1)
+        {
+            if (e1.Unit.Contains("liter"))
+            {
+                return e1.Length;
+            }
+            else if (e1.Unit.Contains("gelon"))
+            {
+                return e1.Length*3.78;
+            }
+            else if (e1.Unit.Contains("ml"))
+            {
+                return e1.Length/1000;
+            }
+           
+            return 0;
 
+        }
     }
 }

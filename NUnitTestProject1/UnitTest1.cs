@@ -265,6 +265,27 @@ namespace NUnitTestProject1
             CheckEquals data2 = new CheckEquals("liter", 1);
             Assert.IsTrue(comp.compare(data, data2));
         }
-
+        /// <summary>
+        /// Add liter and gelon 
+        /// </summary>
+        [Test]
+        public void Add_liter_and_gelon()
+        {
+            CheckEquals data = new CheckEquals("gelon", 1);
+            CheckEquals data2 = new CheckEquals("liter", 3.78);
+            double output = add.AddTwoVolumeInLiter(data, data2);
+            Assert.AreEqual(7.56, output);
+        }
+        /// <summary>
+        /// Add liter and gelon 
+        /// </summary>
+        [Test]
+        public void Add_liter_and_ml()
+        {
+            CheckEquals data = new CheckEquals("liter", 1);
+            CheckEquals data2 = new CheckEquals("ml", 1000);
+            double output = add.AddTwoVolumeInLiter(data, data2);
+            Assert.AreEqual(2, output);
+        }
     }
 }
