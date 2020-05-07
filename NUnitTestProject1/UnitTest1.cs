@@ -298,6 +298,16 @@ namespace NUnitTestProject1
             double output = add.AddTwoweight(data, data2);
             Assert.AreEqual(1001, output);
         }
-       
+        /// <summary>
+        /// Add liter and gelon 
+        /// </summary>
+        [Test]
+        public void CompareFeraniteAndCelcius()
+        {
+            CheckEquals data = new CheckEquals("F", 212);
+            CheckEquals data2 = new CheckEquals("c", 100);
+           Assert.IsTrue( comp.compare(data, data2));
+        }
+
     }
 }

@@ -47,9 +47,11 @@ namespace Quantity_Measurment
             {
                 return CoversionObject.ComparekgAndTonne(objOne, objTwo);
             }
-
-
-
+            else if ((objOne.Unit.Contains("F") && objTwo.Unit.Contains("c")) || (objOne.Unit.Contains("c") && objTwo.Unit.Contains("F")))
+            {
+                return CoversionObject.equateFahrenheitAndCelsius(objOne, objTwo);
+            }
+          
             return false;                        
         }
     }

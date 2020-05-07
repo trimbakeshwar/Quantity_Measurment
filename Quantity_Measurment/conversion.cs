@@ -211,6 +211,21 @@ namespace Quantity_Measurment
             return 0;
 
         }
+        public bool equateFahrenheitAndCelsius(CheckEquals e1, CheckEquals e2)
+        {
+            double data;
+            if (e1.Unit.Contains("F"))
+            {
+                data = ((e1.Length-32.0) * 5.0 / 9.0);
+                return check(e2.Length, data);
+            }
+            else if (e1.Unit.Contains("c"))
+            {
+                data = ((e1.Length * 9 / 5)+32);
+                return check(e2.Length, data);
+            }
+            return false;
+        }
 
-    }
+        }
 }
