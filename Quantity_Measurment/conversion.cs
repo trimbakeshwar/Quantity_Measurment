@@ -77,15 +77,35 @@ namespace Quantity_Measurment
             //convert into feet for comparison
 
         }
-        public bool check(double data2, double data)
+        public bool check(double dataTwo, double data)
         {
-            if (data2 == data)
+            if (dataTwo == data)
             {
                 return true;
             }
             return false;
         }
+        public double convertToInch(CheckEquals e1)
+        {
+            if(e1.Unit.Contains("inch"))
+            {
+                return e1.Length;
+            }
+            else if(e1.Unit.Contains("feet"))
+            {
+                return e1.Length * 12;
+            }
+            else if (e1.Unit.Contains("yard"))
+            {
+                return e1.Length * 12 * 3;
+            }
+            else if (e1.Unit.Contains("cm"))
+            {
+                return e1.Length / 2.5;
+            }
+            return 0;
+        }
 
-        
+
     }
 }

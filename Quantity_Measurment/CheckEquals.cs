@@ -8,8 +8,8 @@ namespace Quantity_Measurment
     {
         //seter and geter of feet
         public double Length{set; get;}
-        public string Unit { set; get; }
-        
+         public string Unit { set; get; }
+       
         CompareLength compare = new CompareLength();
         /// <summary>
         /// constructor to initialize

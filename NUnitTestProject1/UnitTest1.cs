@@ -8,7 +8,8 @@ namespace NUnitTestProject1
     {
         CheckEquals data = new CheckEquals();
         CompareLength comp = new CompareLength();
-       // conversion compare = new conversion();
+        AddLengths add = new AddLengths();
+        // conversion compare = new conversion();
         [SetUp]
         public void Setup()
         {
@@ -177,6 +178,50 @@ namespace NUnitTestProject1
             CheckEquals data = new CheckEquals ("cm", 5);
             CheckEquals data2 = new CheckEquals("inch", 2);
             Assert.IsTrue(comp.compare(data, data2));
+        }
+        /// <summary>
+        /// Add 2 inch and 2 inch 
+        /// </summary>
+        [Test]
+        public void Add_2in_and_2in()
+        {
+            CheckEquals data = new CheckEquals("inch", 2);
+            CheckEquals data2 = new CheckEquals("inch", 2);
+            double output = add.AddTwoLength(data, data2);
+            Assert.AreEqual(4,output);
+        }
+        /// <summary>
+        /// Add 2 inch and 2 inch 
+        /// </summary>
+        [Test]
+        public void Add_1ft_and_2in()
+        {
+            CheckEquals data = new CheckEquals("feet", 1);
+            CheckEquals data2 = new CheckEquals("inch", 2);
+            double output = add.AddTwoLength(data, data2);
+            Assert.AreEqual(14, output);
+        }
+        /// <summary>
+        /// Add 1ft and 1ft 
+        /// </summary>
+        [Test]
+        public void Add_1ft_and_1ft()
+        {
+            CheckEquals data = new CheckEquals("feet", 1);
+            CheckEquals data2 = new CheckEquals("feet", 1);
+            double output = add.AddTwoLength(data, data2);
+            Assert.AreEqual(24, output);
+        }
+        /// <summary>
+        /// Add 2 inch and 2.5 cm 
+        /// </summary>
+        [Test]
+        public void Add_in_and_CM()
+        {
+            CheckEquals data = new CheckEquals("inch", 2);
+            CheckEquals data2 = new CheckEquals("cm", 2.5);
+            double output = add.AddTwoLength(data, data2);
+            Assert.AreEqual(3, output);
         }
     }
     
