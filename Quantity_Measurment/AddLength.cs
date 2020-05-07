@@ -19,5 +19,11 @@ namespace Quantity_Measurment
             double value2 = convert.convertToLiter(object2);
             return value1 + value2;
         }
+        public double AddTwoweight(CheckEquals object1, CheckEquals object2)
+        {
+            double value1 = convert.convertTokg(object1);
+            double value2 = convert.convertTokg(object2);
+            return value1 + value2;
+        }
     }
 }

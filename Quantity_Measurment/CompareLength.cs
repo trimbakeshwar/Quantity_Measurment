@@ -39,6 +39,14 @@ namespace Quantity_Measurment
             {
                 return CoversionObject.ComparevolumeInLiterAndml(objOne, objTwo);
             }
+            else if ((objOne.Unit.Contains("kg") && objTwo.Unit.Contains("gram")) || (objOne.Unit.Contains("gram") && objTwo.Unit.Contains("kg")))
+            {
+                return CoversionObject.ComparekgAndGram(objOne, objTwo);
+            }
+            else if ((objOne.Unit.Contains("tonne") && objTwo.Unit.Contains("kg")) || (objOne.Unit.Contains("tonne") && objTwo.Unit.Contains("kg")))
+            {
+                return CoversionObject.ComparekgAndTonne(objOne, objTwo);
+            }
 
 
 

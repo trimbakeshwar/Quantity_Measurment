@@ -287,5 +287,17 @@ namespace NUnitTestProject1
             double output = add.AddTwoVolumeInLiter(data, data2);
             Assert.AreEqual(2, output);
         }
+        /// <summary>
+        /// Add liter and gelon 
+        /// </summary>
+        [Test]
+        public void Add_in_kg()
+        {
+            CheckEquals data = new CheckEquals("tonne", 1);
+            CheckEquals data2 = new CheckEquals("gram", 1000);
+            double output = add.AddTwoweight(data, data2);
+            Assert.AreEqual(1001, output);
+        }
+       
     }
 }

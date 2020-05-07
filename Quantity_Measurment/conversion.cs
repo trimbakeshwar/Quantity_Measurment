@@ -139,6 +139,41 @@ namespace Quantity_Measurment
             //convert into feet for comparison
 
         }
+        public bool ComparekgAndGram(CheckEquals e1, CheckEquals e2)
+        {
+            double data;
+            if (e1.Unit.Contains("kg"))
+            {
+                data = e1.Length * 1000;
+                return check(e2.Length, data);
+            }
+            else if (e1.Unit.Contains("gram"))
+            {
+                data = e1.Length / 1000;
+                return check(e2.Length, data);
+            }
+            return false;
+            //convert into feet for comparison
+
+        }
+        public bool ComparekgAndTonne(CheckEquals e1, CheckEquals e2)
+        {
+            double data;
+            if (e1.Unit.Contains("kg"))
+            {
+                data = e1.Length * 1000;
+                return check(e2.Length, data);
+            }
+            else if (e1.Unit.Contains("tonne"))
+            {
+                data = e1.Length / 1000;
+                return check(e2.Length, data);
+            }
+            return false;
+            //convert into feet for comparison
+
+        }
+
         public double convertToLiter(CheckEquals e1)
         {
             if (e1.Unit.Contains("liter"))
@@ -157,5 +192,25 @@ namespace Quantity_Measurment
             return 0;
 
         }
+
+        public double convertTokg(CheckEquals e1)
+        {
+            if (e1.Unit.Contains("kg"))
+            {
+                return e1.Length;
+            }
+            else if (e1.Unit.Contains("tonne"))
+            {
+                return e1.Length * 1000;
+            }
+            else if (e1.Unit.Contains("gram"))
+            {
+                return e1.Length / 1000;
+            }
+
+            return 0;
+
+        }
+
     }
 }
