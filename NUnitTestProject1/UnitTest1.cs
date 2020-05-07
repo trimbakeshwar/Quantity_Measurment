@@ -43,8 +43,8 @@ namespace NUnitTestProject1
         [Test]
         public void checkForWrongRefrance()
         {
-            CheckEquals data = new CheckEquals("inch",5);
-            CheckEquals data2 = new CheckEquals("feet",5);
+            CheckEquals data = new CheckEquals("inch", 5);
+            CheckEquals data2 = new CheckEquals("feet", 5);
             Assert.IsFalse(data.equals(data2));
         }
         /// <summary>
@@ -54,18 +54,18 @@ namespace NUnitTestProject1
         [Test]
         public void checkForWrongType()
         {
-            CheckEquals data = new CheckEquals("inch",5);
+            CheckEquals data = new CheckEquals("inch", 5);
             object o = new object();
             Assert.IsFalse(data.equals(o));
         }
-      /// <summary>
-      /// check for same value
-      /// </summary>
+        /// <summary>
+        /// check for same value
+        /// </summary>
         [Test]
         public void checkEqualse()
         {
-            CheckEquals data = new CheckEquals("inch",5);
-           
+            CheckEquals data = new CheckEquals("inch", 5);
+
             Assert.IsTrue(data.equals(data));
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace NUnitTestProject1
         [Test]
         public void compare_1ft_with_1inch()
         {
-            CheckEquals data = new CheckEquals ("feet", 1);
+            CheckEquals data = new CheckEquals("feet", 1);
             CheckEquals data2 = new CheckEquals("inch", 1);
             Assert.IsFalse(comp.compare(data, data2));
         }
@@ -94,7 +94,7 @@ namespace NUnitTestProject1
         [Test]
         public void compare_1ft_With_12inch()
         {
-            CheckEquals data = new CheckEquals ("feet", 1);
+            CheckEquals data = new CheckEquals("feet", 1);
             CheckEquals data2 = new CheckEquals("inch", 12);
             Assert.IsTrue(comp.compare(data, data2));
         }
@@ -128,9 +128,9 @@ namespace NUnitTestProject1
             CheckEquals data2 = new CheckEquals("yard", 1);
             Assert.IsFalse(comp.compare(data, data2));
         }
-              /// <summary>
-              /// compare  1 inch  with 1 yard
-              /// </summary>
+        /// <summary>
+        /// compare  1 inch  with 1 yard
+        /// </summary>
         [Test]
         public void compare_1inch_With_1yard()
         {
@@ -156,7 +156,7 @@ namespace NUnitTestProject1
         public void compare_1yard_with_3feet()
         {
             CheckEquals data = new CheckEquals("yard", 1);
-            CheckEquals data2 = new CheckEquals("feet",3);
+            CheckEquals data2 = new CheckEquals("feet", 3);
             Assert.IsTrue(comp.compare(data, data2));
         }
         /// <summary>
@@ -175,7 +175,7 @@ namespace NUnitTestProject1
         [Test]
         public void compare_5cm_with_2inch()
         {
-            CheckEquals data = new CheckEquals ("cm", 5);
+            CheckEquals data = new CheckEquals("cm", 5);
             CheckEquals data2 = new CheckEquals("inch", 2);
             Assert.IsTrue(comp.compare(data, data2));
         }
@@ -188,7 +188,7 @@ namespace NUnitTestProject1
             CheckEquals data = new CheckEquals("inch", 2);
             CheckEquals data2 = new CheckEquals("inch", 2);
             double output = add.AddTwoLength(data, data2);
-            Assert.AreEqual(4,output);
+            Assert.AreEqual(4, output);
         }
         /// <summary>
         /// Add 2 inch and 2 inch 
@@ -223,6 +223,48 @@ namespace NUnitTestProject1
             double output = add.AddTwoLength(data, data2);
             Assert.AreEqual(3, output);
         }
+        /// <summary>
+        /// compare   5cm with 2inch
+        /// </summary>
+        [Test]
+        public void compare_gelon_with_liter()
+        {
+            CheckEquals data = new CheckEquals("gelon", 1);
+            CheckEquals data2 = new CheckEquals("liter", 3.78);
+            Assert.IsTrue(comp.compare(data, data2));
+        }
+        /// <su
+        ///  /// <summary>
+        /// compare   5cm with 2inch
+        /// </summary>
+        [Test]
+        public void compare_liter_with_gelon()
+        {
+            CheckEquals data = new CheckEquals("liter", 3.78);
+            CheckEquals data2 = new CheckEquals("gelon", 1);
+            Assert.IsTrue(comp.compare(data, data2));
+        }
+        ///  /// <summary>
+        /// compare   5cm with 2inch
+        /// </summary>
+        [Test]
+        public void compare_liter_with_ml()
+        {
+            CheckEquals data = new CheckEquals("liter", 1);
+            CheckEquals data2 = new CheckEquals("ml", 1000);
+            Assert.IsTrue(comp.compare(data, data2));
+        }
+
+        ///  /// <summary>
+        /// compare   5cm with 2inch
+        /// </summary>
+        [Test]
+        public void compare_ml_with_liter()
+        {
+            CheckEquals data = new CheckEquals("ml", 1000);
+            CheckEquals data2 = new CheckEquals("liter", 1);
+            Assert.IsTrue(comp.compare(data, data2));
+        }
+
     }
-    
 }

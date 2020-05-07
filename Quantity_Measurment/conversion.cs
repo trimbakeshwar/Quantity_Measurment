@@ -105,7 +105,40 @@ namespace Quantity_Measurment
             }
             return 0;
         }
+        public bool ComparevolumeInLiterAndGelon(CheckEquals e1, CheckEquals e2)
+        {
+            double data;
+            if (e1.Unit.Contains("liter"))
+            {
+                data = e1.Length/3.78;
+                return check(e2.Length, data);
+            }
+            else if (e1.Unit.Contains("gelon"))
+            {
+                data = e1.Length*3.78;
+                return check(e2.Length, data);
+            }
+            return false;
+            //convert into feet for comparison
 
+        }
+        public bool ComparevolumeInLiterAndml(CheckEquals e1, CheckEquals e2)
+        {
+            double data;
+            if (e1.Unit.Contains("liter"))
+            {
+                data = e1.Length * 1000;
+                return check(e2.Length, data);
+            }
+            else if (e1.Unit.Contains("ml"))
+            {
+                data = e1.Length/1000;
+                return check(e2.Length, data);
+            }
+            return false;
+            //convert into feet for comparison
+
+        }
 
     }
 }

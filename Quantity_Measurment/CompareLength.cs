@@ -31,6 +31,14 @@ namespace Quantity_Measurment
             {
                 return CoversionObject.compareinchAndCM(objOne, objTwo);
             }
+            else if ((objOne.Unit.Contains("gelon") && objTwo.Unit.Contains("liter")) || (objOne.Unit.Contains("liter") && objTwo.Unit.Contains("gelon")))
+            {
+                return CoversionObject.ComparevolumeInLiterAndGelon(objOne, objTwo);
+            }
+            else if ((objOne.Unit.Contains("liter") && objTwo.Unit.Contains("ml")) || (objOne.Unit.Contains("ml") && objTwo.Unit.Contains("liter")))
+            {
+                return CoversionObject.ComparevolumeInLiterAndml(objOne, objTwo);
+            }
 
 
 
