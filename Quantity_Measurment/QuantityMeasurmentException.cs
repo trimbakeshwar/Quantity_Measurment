@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Quantity_Measurment
+namespace Quantity_measurment
 {
     public class QuantityMeasurmentException:Exception
     {
-        public enum ExceptionType
+       public enum exceptionType
         {
-            INVALID_UNIT
+            ENTER_VALID_INPUT
         }
-        public ExceptionType type;
-        public QuantityMeasurmentException(QuantityMeasurmentException.ExceptionType type,string massage):base(massage)
+        public exceptionType type;
+       public  QuantityMeasurmentException(QuantityMeasurmentException.exceptionType type,string massage):base (massage)
         {
             this.type = type;
         }
